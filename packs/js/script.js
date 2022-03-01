@@ -2,8 +2,10 @@ const secHand = document.querySelector(".sec-hand");
 const hourHand = document.querySelector(".hour-hand");
 const minHand = document.querySelector(".min-hand");
 const transitionTxt = "all 0.05s cubic-bezier(0.1, 2.7, 0.58, 1)";
+const audio= this.document.getElementById("sound");
 
 function setDate() {
+
   const now = new Date();
   const seconds = now.getSeconds();
   const hour = now.getHours();
@@ -19,6 +21,7 @@ function setDate() {
   animateHand(seconds, secHand, secondsDegrees);
   animateHand(min, minHand, minDegrees);
   animateHand(hour, hourHand, hourDegrees);
+  audio.play();
   console.log(hour, min, seconds);
 }
 function animateHand(time, hand, degree) {
